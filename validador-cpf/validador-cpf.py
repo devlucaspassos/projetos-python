@@ -51,7 +51,8 @@ while True:
     # --> Fazendo a junção dos dígitos 
     novo_cpf = cpf_backup[:12] + str(digit_1) + str(digit_2)
 
-    if novo_cpf == cpf_backup: # --> Validando o CPF
+    # Abaixo há a verficação do CPF junto com uam varificação de que os números não são sequências.
+    if novo_cpf == cpf_backup and cpf_backup[0:3] != cpf_backup[4:7] and cpf_backup[0:3] != cpf_backup[8:11]: 
         print('Válido.')
     else:
         print('Inválido.')
